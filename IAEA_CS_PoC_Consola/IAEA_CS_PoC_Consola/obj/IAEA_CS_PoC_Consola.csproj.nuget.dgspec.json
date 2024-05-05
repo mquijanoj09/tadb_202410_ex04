@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial4-MQJ-421383/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola.csproj": {}
+  },
+  "projects": {
+    "/Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial4-MQJ-421383/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial4-MQJ-421383/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola.csproj",
+        "projectName": "IAEA_CS_PoC_Consola",
+        "projectPath": "/Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial4-MQJ-421383/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola.csproj",
+        "packagesPath": "/Users/mquijanoj/.nuget/packages/",
+        "outputPath": "/Users/mquijanoj/Documents/Miguel's MacBook Pro/UNIVERSIDAD/SEMESTRE ACTUAL/TABD/Parcial4-MQJ-421383/IAEA_CS_PoC_Consola/IAEA_CS_PoC_Consola/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mquijanoj/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.35, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.25.0, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.25.0, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
