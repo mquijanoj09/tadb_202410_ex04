@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/IAEA_CS_NoSQL_REST_API.props" />
+</Project>

@@ -7,7 +7,7 @@ namespace IAEA_CS_NoSQL_REST_API.Interfaces
     {
         public Task<IEnumerable<Reactor>> GetAllAsync();
 
-        public Task<Reactor> GetByIdAsync(int reactor_id);
+        public Task<Reactor> GetByIdAsync(string reactor_id);
 
         public Task<Reactor> GetByNameAsync(string reactor_nombre);
 
@@ -15,6 +15,6 @@ namespace IAEA_CS_NoSQL_REST_API.Interfaces
 
         public Task<bool> UpdateAsync(Reactor unaReactor);
 
-        public Task<bool> RemoveAsync(int reactor_id);
+        public Task<bool> RemoveAsync(string reactor_id);
     }
 }

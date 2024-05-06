@@ -16,12 +16,12 @@ namespace IAEA_CS_NoSQL_REST_API.Services
                 .GetAllAsync();
         }
 
-        public async Task<Reactor> GetByIdAsync(int reactor_id)
+        public async Task<Reactor> GetByIdAsync(string reactor_id)
         {
             Reactor unaReactor = await _reactorRepository
                 .GetByIdAsync(reactor_id);
 
-            if (unaReactor.Id == 0)
+            if (unaReactor.Id == "")
                 throw new AppValidationException($"Reactor no encontrada con el id {reactor_id}");
 
             return unaReactor;
@@ -46,18 +46,22 @@ namespace IAEA_CS_NoSQL_REST_API.Services
                 throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
 
             //Validamos que la reactor tenga ciudad
-            if (unaReactor.Ciudad_id! == 0)
+            if (unaReactor.Ciudad! == "")
                 throw new AppValidationException("No se puede insertar una reactor con ciudad nulo");
 
+            //Validamos que la reactor tenga pais
+            if (unaReactor.Pais! == "")
+                throw new AppValidationException("No se puede insertar una reactor con pais nulo");
+
             //Validamos que la reactor tenga tipo
-            if (unaReactor.Tipo_id! == 0)
+            if (unaReactor.Tipo! == "")
                 throw new AppValidationException("No se puede insertar una reactor con tipo nulo");
 
             //Validamos que no exista previamente una reactor con ese nombre
             var reactorExistente = await _reactorRepository
                 .GetByNameAsync(unaReactor.Nombre);
 
-            if (reactorExistente.Id != 0)
+            if (reactorExistente.Id != "")
                 throw new AppValidationException($"Ya existe la reactor {unaReactor.Nombre} ");
 
             try
@@ -82,7 +86,7 @@ namespace IAEA_CS_NoSQL_REST_API.Services
         public async Task<Reactor> UpdateAsync(Reactor unaReactor)
         {
             //Validamos que la reactor tenga Id
-            if (unaReactor.Id == 0)
+            if (unaReactor.Id == "")
                 throw new AppValidationException("El Id de reactor se requiere especificar para realizar actualización");
 
             //Validamos que la reactor tenga nombre
@@ -102,18 +106,22 @@ namespace IAEA_CS_NoSQL_REST_API.Services
                 throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
 
             //Validamos que la reactor tenga ciudad
-            if (unaReactor.Ciudad_id! == 0)
+            if (unaReactor.Ciudad! == "")
                 throw new AppValidationException("No se puede insertar una reactor con ciudad nulo");
 
+            //Validamos que la reactor tenga pais
+            if (unaReactor.Pais! == "")
+                throw new AppValidationException("No se puede insertar una reactor con pais nulo");
+
             //Validamos que la reactor tenga tipo
-            if (unaReactor.Tipo_id! == 0)
+            if (unaReactor.Tipo! == "")
                 throw new AppValidationException("No se puede insertar una reactor con tipo nulo");
 
             //Que la reactor exista con ese Id:            
             var reactorExistente = await _reactorRepository
                 .GetByIdAsync(unaReactor.Id);
 
-            if (reactorExistente.Id == 0)
+            if (reactorExistente.Id == "")
                 throw new AppValidationException($"No existe la reactor {unaReactor.Nombre} para actualizar");
 
             //Que el nombre nuevo de la reactor no exista en otra reactor distinta
@@ -142,7 +150,7 @@ namespace IAEA_CS_NoSQL_REST_API.Services
             return (reactorExistente);
         }
 
-        public async Task<string> RemoveAsync(int reactor_id)
+        public async Task<string> RemoveAsync(string reactor_id)
         {
             string nombreReactorEliminada = string.Empty;
 
@@ -150,7 +158,7 @@ namespace IAEA_CS_NoSQL_REST_API.Services
             Reactor unaReactor = await _reactorRepository
                 .GetByIdAsync(reactor_id);
 
-            if (unaReactor.Id == 0)
+            if (unaReactor.Id == "")
                 throw new AppValidationException($"Reactor no encontrada con el id {reactor_id}");
 
             nombreReactorEliminada = unaReactor.Nombre!;

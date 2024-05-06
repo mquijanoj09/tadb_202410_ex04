@@ -1,4 +1,29 @@
 ﻿<Properties StartupConfiguration="{01FC55F7-205F-4A68-A612-4F240CDF95E5}|https">
-  <MonoDevelop.Ide.ItemProperties.IAEA__CS__NoSQL__REST__API FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="IAEA_CS_NoSQL_REST_API/Models/Reactor.cs">
+    <Files>
+      <File FileName="IAEA_CS_NoSQL_REST_API/appsettings.json" Line="1" Column="1" />
+      <File FileName="IAEA_CS_NoSQL_REST_API/Models/ReactoresDatabaseSettings.cs" Line="1" Column="1" />
+      <File FileName="IAEA_CS_NoSQL_REST_API/Models/Reactor.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IAEA_CS_NoSQL_REST_API" expanded="True">
+            <Node name="IAEA_CS_NoSQL_REST_API" expanded="True">
+              <Node name="Models" expanded="True">
+                <Node name="Reactor.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.IAEA__CS__NoSQL__REST__API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

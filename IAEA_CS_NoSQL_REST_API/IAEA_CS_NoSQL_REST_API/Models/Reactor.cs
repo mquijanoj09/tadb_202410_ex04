@@ -1,29 +1,49 @@
 ﻿using System.Text.Json.Serialization;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace IAEA_CS_NoSQL_REST_API.Models
 {
     public class Reactor
     {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
         [JsonPropertyName("id")]
-        public int Id { get; set; } = 0;
+        public string? Id { get; set; } = string.Empty;
 
+        [BsonElement("nombre")]
+        [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("nombre")]
         public string? Nombre { get; set; } = string.Empty;
 
+        [BsonElement("potencia")]
+        [BsonRepresentation(BsonType.Double)]
         [JsonPropertyName("potencia")]
-        public float? Potencia { get; set; } = 0;
+        public double? Potencia { get; set; } = 0;
 
+        [BsonElement("estado")]
+        [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("estado")]
         public string? Estado { get; set; } = string.Empty;
 
+        [BsonElement("fecha")]
+        [BsonRepresentation(BsonType.DateTime)]
         [JsonPropertyName("fecha")]
         public DateTime? Fecha { get; set; } = new DateTime(2000, 1, 1);
 
-        [JsonPropertyName("tipo_id")]
-        public int? Tipo_id { get; set; } =  0;
+        [BsonElement("tipo")]
+        [BsonRepresentation(BsonType.String)]
+        [JsonPropertyName("tipo")]
+        public string? Tipo { get; set; } = string.Empty;
 
-        [JsonPropertyName("ciudad_id")]
-        public int? Ciudad_id { get; set; } = 0;
+        [BsonElement("pais")]
+        [BsonRepresentation(BsonType.String)]
+        [JsonPropertyName("pais")]
+        public string? Pais { get; set; } = string.Empty;
 
+        [BsonElement("ciudad")]
+        [BsonRepresentation(BsonType.String)]
+        [JsonPropertyName("ciudad")]
+        public string? Ciudad { get; set; } = string.Empty;
     }
 }

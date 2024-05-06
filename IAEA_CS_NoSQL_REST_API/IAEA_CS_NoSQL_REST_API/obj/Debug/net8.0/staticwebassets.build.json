@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "O0rYnkvJk3OqtX/TH1uMIGwpEhwA2Xy/bh/orF486oI=",
+  "Source": "IAEA_CS_NoSQL_REST_API",
+  "BasePath": "_content/IAEA_CS_NoSQL_REST_API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -21,8 +21,8 @@ namespace IAEA_CS_NoSQL_REST_API.Controllers
             return Ok(lasReactores);
         }
 
-        [HttpGet("{reactor_id:int}")]
-        public async Task<IActionResult> GetByIdAsync(int reactor_id)
+        [HttpGet("{reactor_id:length(24)}")]
+        public async Task<IActionResult> GetByIdAsync(string reactor_id)
         {
             try
             {
@@ -77,8 +77,8 @@ namespace IAEA_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpDelete("{reactor_id:int}")]
-        public async Task<IActionResult> RemoveAsync(int reactor_id)
+        [HttpDelete("{reactor_id:length(24)}")]
+        public async Task<IActionResult> RemoveAsync(string reactor_id)
         {
             try
             {
