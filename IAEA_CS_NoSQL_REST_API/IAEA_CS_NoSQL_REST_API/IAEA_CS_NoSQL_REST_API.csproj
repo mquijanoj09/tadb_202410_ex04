@@ -23,21 +23,4 @@
   <ItemGroup>
     <Folder Include="DbContexts\" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="Controllers\ResumenController.cs" />
-    <Compile Remove="Controllers\UbicacionesController.cs" />
-    <Compile Remove="Controllers\TiposController.cs" />
-    <Compile Remove="Interfaces\IResumenRepository.cs" />
-    <Compile Remove="Repositories\UbicacionRepository.cs" />
-    <Compile Remove="Repositories\TipoRepository.cs" />
-    <Compile Remove="Repositories\ResumenRepository.cs" />
-    <Compile Remove="Models\Resumen.cs" />
-    <Compile Remove="Models\Ubicacion.cs" />
-    <Compile Remove="Models\Tipo.cs" />
-    <Compile Remove="Services\UbicacionService.cs" />
-    <Compile Remove="Services\TipoService.cs" />
-    <Compile Remove="Services\ResumenService.cs" />
-    <Compile Remove="Interfaces\IUbicacionRepository.cs" />
-    <Compile Remove="Interfaces\ITipoRepository.cs" />
-  </ItemGroup>
 </Project>

@@ -21,8 +21,8 @@ namespace IAEA_CS_NoSQL_REST_API.Controllers
             return Ok(lasUbicaciones);
         }
 
-        [HttpGet("{ubicacion_id:int}")]
-        public async Task<IActionResult> GetByIdAsync(int ubicacion_id)
+        [HttpGet("{ubicacion_id:length(24)}")]
+        public async Task<IActionResult> GetByIdAsync(string ubicacion_id)
         {
             try
             {
@@ -37,8 +37,8 @@ namespace IAEA_CS_NoSQL_REST_API.Controllers
             }
         }
 
-        [HttpGet("{ubicacion_id:int}/Reactores")]
-        public async Task<IActionResult> GetReactoresUbicacionAsync(int ubicacion_id)
+        [HttpGet("{ubicacion_id:length(24)}/Reactores")]
+        public async Task<IActionResult> GetReactoresUbicacionAsync(string ubicacion_id)
         {
             try
             {

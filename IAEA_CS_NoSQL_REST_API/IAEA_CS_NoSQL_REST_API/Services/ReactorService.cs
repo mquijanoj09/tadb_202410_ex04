@@ -46,15 +46,11 @@ namespace IAEA_CS_NoSQL_REST_API.Services
                 throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
 
             //Validamos que la reactor tenga ciudad
-            if (unaReactor.Ciudad! == "")
+            if (unaReactor.Ciudad_id! == 0)
                 throw new AppValidationException("No se puede insertar una reactor con ciudad nulo");
-
-            //Validamos que la reactor tenga pais
-            if (unaReactor.Pais! == "")
-                throw new AppValidationException("No se puede insertar una reactor con pais nulo");
-
+            
             //Validamos que la reactor tenga tipo
-            if (unaReactor.Tipo! == "")
+            if (unaReactor.Tipo_id! == 0)
                 throw new AppValidationException("No se puede insertar una reactor con tipo nulo");
 
             //Validamos que no exista previamente una reactor con ese nombre
@@ -106,15 +102,11 @@ namespace IAEA_CS_NoSQL_REST_API.Services
                 throw new AppValidationException("La fecha del reactor no puede ser el valor predeterminado.");
 
             //Validamos que la reactor tenga ciudad
-            if (unaReactor.Ciudad! == "")
+            if (unaReactor.Ciudad_id! == 0)
                 throw new AppValidationException("No se puede insertar una reactor con ciudad nulo");
 
-            //Validamos que la reactor tenga pais
-            if (unaReactor.Pais! == "")
-                throw new AppValidationException("No se puede insertar una reactor con pais nulo");
-
             //Validamos que la reactor tenga tipo
-            if (unaReactor.Tipo! == "")
+            if (unaReactor.Tipo_id! == 0)
                 throw new AppValidationException("No se puede insertar una reactor con tipo nulo");
 
             //Que la reactor exista con ese Id:            

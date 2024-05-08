@@ -1,0 +1,22 @@
+[
+  {
+    "ciudad": "Lima",
+    "pais": "Peru"
+  },
+  {
+    "ciudad": "Santiago",
+    "pais": "Chile"
+  },
+  {
+    "ciudad": "Sao Paulo",
+    "pais": "Brazil"
+  },
+  {
+    "ciudad": "Ezeiza",
+    "pais": "Argentina"
+  },
+  {
+    "ciudad": "Bogota",
+    "pais": "Colombia"
+  }
+]

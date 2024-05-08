@@ -3,6 +3,7 @@ using IAEA_CS_NoSQL_REST_API.DbContexts;
 using IAEA_CS_NoSQL_REST_API.Interfaces;
 using IAEA_CS_NoSQL_REST_API.Models;
 using IAEA_CS_NoSQL_REST_API.Helpers;
+using MongoDB.Driver;
 
 namespace IAEA_CS_NoSQL_REST_API.Repositories
 {
@@ -13,39 +14,31 @@ namespace IAEA_CS_NoSQL_REST_API.Repositories
         public async Task<IEnumerable<Tipo>> GetAllAsync()
         {
             var conexion = contextoDB.CreateConnection();
+            var coleccionTipos = conexion
+                .GetCollection<Tipo>(contextoDB.ConfiguracionColecciones.ColeccionTipos);
 
-            string sentenciaSQL = "SELECT id, tipo_nombre " +
-                                  "FROM core.Tipos " +
-                                  "ORDER BY id DESC";
-
-            var resultadoTipos = await conexion
-                .QueryAsync<Tipo>(sentenciaSQL, new DynamicParameters());
-
-            return resultadoTipos;
+            var losTipos = await coleccionTipos
+                .Find(_ => true)
+                .SortBy(tipo => tipo.Tipo_nombre)
+                .ToListAsync();
+            return losTipos;
         }
 
-        public async Task<Tipo> GetByIdAsync(int tipo_id)
+        public async Task<Tipo> GetByIdAsync(string tipo_id)
         {
-            Tipo unaTipo = new();
+            Tipo unTipo = new();
 
             var conexion = contextoDB.CreateConnection();
+            var coleccionTipos = conexion
+                .GetCollection<Tipo>(contextoDB.ConfiguracionColecciones.ColeccionTipos);
 
-            DynamicParameters parametrosSentencia = new();
-            parametrosSentencia.Add("@tipo_id", tipo_id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var resultado = await coleccionTipos
+                .Find(tipo => tipo.Id == tipo_id)
+                .FirstOrDefaultAsync();
 
-            string sentenciaSQL = "SELECT id, tipo_nombre " +
-                                  "FROM core.Tipos " +
-                                  "WHERE id = @tipo_id " +
-                                  "ORDER BY id DESC";
-
-            var resultado = await conexion.QueryAsync<Tipo>(sentenciaSQL,
-                parametrosSentencia);
-
-            if (resultado.Any())
-                unaTipo = resultado.First();
-
-            return unaTipo;
+            if (resultado is not null)
+                unTipo = resultado;
+            return unTipo;
         }
-
     }
 }

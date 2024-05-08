@@ -1,0 +1,14 @@
+[
+  {
+    "tipo_nombre": "CRIT ASSEMBLY"
+  },
+  {
+    "tipo_nombre": "POOL"
+  },
+  {
+    "tipo_nombre": "TANK"
+  },
+  {
+    "tipo_nombre": "SUBCRIT"
+  }
+]

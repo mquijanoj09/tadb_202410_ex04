@@ -5,6 +5,8 @@ namespace IAEA_CS_NoSQL_REST_API.Models
     {
         public string DatabaseName { get; set; } = null!;
         public string ColeccionReactores { get; set; } = null!;
+        public string ColeccionTipos { get; set; } = null!;
+        public string ColeccionUbicaciones { get; set; } = null!;
 
         public ReactoresDatabaseSettings(IConfiguration unaConfiguracion)
         {
@@ -12,6 +14,8 @@ namespace IAEA_CS_NoSQL_REST_API.Models
 
             DatabaseName = configuracion.GetSection("DatabaseName").Value!;
             ColeccionReactores = configuracion.GetSection("ColeccionReactores").Value!;
+            ColeccionTipos = configuracion.GetSection("ColeccionTipos").Value!;
+            ColeccionUbicaciones = configuracion.GetSection("ColeccionUbicaciones").Value!;
         }
     }
 }

@@ -31,19 +31,14 @@ namespace IAEA_CS_NoSQL_REST_API.Models
         [JsonPropertyName("fecha")]
         public DateTime? Fecha { get; set; } = new DateTime(2000, 1, 1);
 
-        [BsonElement("tipo")]
-        [BsonRepresentation(BsonType.String)]
-        [JsonPropertyName("tipo")]
-        public string? Tipo { get; set; } = string.Empty;
+        [BsonElement("tipo_id")]
+        [BsonRepresentation(BsonType.Int32)]
+        [JsonPropertyName("tipo_id")]
+        public int? Tipo_id { get; set; } = 0;
 
-        [BsonElement("pais")]
-        [BsonRepresentation(BsonType.String)]
-        [JsonPropertyName("pais")]
-        public string? Pais { get; set; } = string.Empty;
-
-        [BsonElement("ciudad")]
-        [BsonRepresentation(BsonType.String)]
-        [JsonPropertyName("ciudad")]
-        public string? Ciudad { get; set; } = string.Empty;
+        [BsonElement("ciudad_id")]
+        [BsonRepresentation(BsonType.Int32)]
+        [JsonPropertyName("ciudad_id")]
+        public int? Ciudad_id { get; set; } = 0;
     }
 }

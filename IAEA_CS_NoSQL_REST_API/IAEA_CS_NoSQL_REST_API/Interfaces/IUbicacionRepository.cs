@@ -6,8 +6,8 @@ namespace IAEA_CS_NoSQL_REST_API.Interfaces
     {
         public Task<IEnumerable<Ubicacion>> GetAllAsync();
 
-        public Task<Ubicacion> GetByIdAsync(int ubicacion_id); 
+        public Task<Ubicacion> GetByIdAsync(string ubicacion_id); 
 
-        public Task<Ubicacion> GetReactoresUbicacionAsync(int ubicacion_id);
+        public Task<Ubicacion> GetReactoresUbicacionAsync(string ubicacion_id);
     }
 }

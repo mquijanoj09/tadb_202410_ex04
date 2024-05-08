@@ -16,12 +16,12 @@ namespace IAEA_CS_NoSQL_REST_API.Services
                 .GetAllAsync();
         }
 
-        public async Task<Tipo> GetByIdAsync(int tipo_id)
+        public async Task<Tipo> GetByIdAsync(string tipo_id)
         {
             Tipo unaTipo = await _tipoRepository
                 .GetByIdAsync(tipo_id);
-
-            if (unaTipo.Id == 0)
+            
+            if (unaTipo.Id == "")
                 throw new AppValidationException($"Tipo no encontrada con el id {tipo_id}");
 
             return unaTipo;

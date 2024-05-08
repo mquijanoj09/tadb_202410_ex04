@@ -4,44 +4,39 @@
     "potencia": 5000,
     "estado": "OPERATIONAL",
     "fecha": "1978-07-20T00:00:00",
-    "tipo": "SUBCRIT",
-    "pais": "Colombia",
-    "ciudad": "Bogota"
+    "tipo_id": 1,
+    "ciudad_id": 5
   },
   {
     "nombre": "Argonauta",
     "potencia": 0.2,
     "estado": "PLANNED",
     "fecha": "1978-07-20T00:00:00",
-    "tipo": "TANK",
-    "pais": "Argentina",
-    "ciudad": "Ezeiza"
+    "tipo_id": 4,
+    "ciudad_id": 4
   },
   {
     "nombre": "IPR-R1",
     "potencia": 30000,
     "estado": "PLANNED",
     "fecha": "1988-11-30T00:00:00",
-    "tipo": "POOL",
-    "pais": "Brazil",
-    "ciudad": "Sao Paulo"
+    "tipo_id": 3,
+    "ciudad_id": 3
   },
   {
     "nombre": "IPEN/MB-01",
     "potencia": 0.003,
     "estado": "OPERATIONAL",
     "fecha": "1965-01-20T00:00:00",
-    "tipo": "CRIT ASSEMBLY",
-    "pais": "Chile",
-    "ciudad": "Santiago"
+    "tipo_id": 2,
+    "ciudad_id": 2
   },
   {
     "nombre": "RECH-1",
     "potencia": 5000,
     "estado": "EXTENDED SHUTDOWN",
     "fecha": "1974-10-13T00:00:00",
-    "tipo": "SUBCRIT",
-    "pais": "Peru",
-    "ciudad": "Lima"
+    "tipo_id": 1,
+    "ciudad_id": 1
   }
 ]

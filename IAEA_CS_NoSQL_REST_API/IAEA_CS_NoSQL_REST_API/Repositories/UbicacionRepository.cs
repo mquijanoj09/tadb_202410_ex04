@@ -3,6 +3,7 @@ using IAEA_CS_NoSQL_REST_API.DbContexts;
 using IAEA_CS_NoSQL_REST_API.Interfaces;
 using IAEA_CS_NoSQL_REST_API.Models;
 using IAEA_CS_NoSQL_REST_API.Helpers;
+using MongoDB.Driver;
 
 namespace IAEA_CS_NoSQL_REST_API.Repositories
 {
@@ -13,62 +14,47 @@ namespace IAEA_CS_NoSQL_REST_API.Repositories
         public async Task<IEnumerable<Ubicacion>> GetAllAsync()
         {
             var conexion = contextoDB.CreateConnection();
+            var coleccionUbicaciones = conexion
+                .GetCollection<Ubicacion>(contextoDB.ConfiguracionColecciones.ColeccionUbicaciones);
 
-            string sentenciaSQL = "SELECT id, nombre " +
-                                  "FROM core.Ciudades " +
-                                  "ORDER BY id DESC";
-
-            var resultadoUbicaciones = await conexion
-                .QueryAsync<Ubicacion>(sentenciaSQL, new DynamicParameters());
-
-            return resultadoUbicaciones;
+            var losUbicaciones = await coleccionUbicaciones
+                .Find(_ => true)
+                .SortBy(ubicacion => ubicacion.Ciudad)
+                .ToListAsync();
+            return losUbicaciones;
         }
 
-        public async Task<Ubicacion> GetByIdAsync(int ubicacion_id)
+        public async Task<Ubicacion> GetByIdAsync(string ubicacion_id)
         {
-            Ubicacion unaUbicacion = new();
+            Ubicacion unUbicacion = new();
 
             var conexion = contextoDB.CreateConnection();
+            var coleccionUbicaciones = conexion
+                .GetCollection<Ubicacion>(contextoDB.ConfiguracionColecciones.ColeccionUbicaciones);
 
-            DynamicParameters parametrosSentencia = new();
-            parametrosSentencia.Add("@ubicacion_id", ubicacion_id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var resultado = await coleccionUbicaciones
+                .Find(ubicacion => ubicacion.Id == ubicacion_id)
+                .FirstOrDefaultAsync();
 
-            string sentenciaSQL = "SELECT id, nombre " +
-                                  "FROM core.Ciudades " +
-                                  "WHERE id = @ubicacion_id " +
-                                  "ORDER BY nombre";
-
-            var resultado = await conexion.QueryAsync<Ubicacion>(sentenciaSQL,
-                parametrosSentencia);
-
-            if (resultado.Any())
-                unaUbicacion = resultado.First();
-
-            return unaUbicacion;
+            if (resultado is not null)
+                unUbicacion = resultado;
+            return unUbicacion;
         }
 
-        public async Task<Ubicacion> GetReactoresUbicacionAsync(int ubicacion_id)
+        public async Task<Ubicacion> GetReactoresUbicacionAsync(string ubicacion_id)
         {
             Ubicacion reactoresUbicacion = new();
 
             var conexion = contextoDB.CreateConnection();
+            var coleccionReactores = conexion.GetCollection<Ubicacion>(contextoDB.ConfiguracionColecciones.ColeccionReactores);
 
-            DynamicParameters parametrosSentencia = new();
-            parametrosSentencia.Add("@ubicacion_id", ubicacion_id, System.Data.DbType.Int32, System.Data.ParameterDirection.Input);
+            var filtro = Builders<Ubicacion>.Filter.Eq("id", ubicacion_id);
+            var resultado = await coleccionReactores.Find(filtro).FirstOrDefaultAsync();
 
-            string sentenciaSQL = "SELECT id, nombre " +
-                                  "FROM core.Reactores " +
-                                  "WHERE id = @ubicacion_id " +
-                                  "ORDER BY nombre";
-
-            var resultado = await conexion.QueryAsync<Ubicacion>(sentenciaSQL,
-                parametrosSentencia);
-
-            if (resultado.Any())
-                reactoresUbicacion = resultado.First();
+            if (resultado != null)
+                reactoresUbicacion = resultado;
 
             return reactoresUbicacion;
         }
-
     }
 }

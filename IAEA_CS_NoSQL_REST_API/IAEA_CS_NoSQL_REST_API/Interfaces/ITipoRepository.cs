@@ -6,7 +6,7 @@ namespace IAEA_CS_NoSQL_REST_API.Interfaces
     {
         public Task<IEnumerable<Tipo>> GetAllAsync();
 
-        public Task<Tipo> GetByIdAsync(int tipo_id);
+        public Task<Tipo> GetByIdAsync(string tipo_id);
 
     }
 }

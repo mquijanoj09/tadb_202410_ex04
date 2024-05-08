@@ -4,7 +4,6 @@ using IAEA_CS_NoSQL_REST_API.Interfaces;
 using IAEA_CS_NoSQL_REST_API.Models;
 using IAEA_CS_NoSQL_REST_API.Helpers;
 using MongoDB.Driver;
-using System.Security.Claims;
 
 namespace IAEA_CS_NoSQL_REST_API.Repositories
 {

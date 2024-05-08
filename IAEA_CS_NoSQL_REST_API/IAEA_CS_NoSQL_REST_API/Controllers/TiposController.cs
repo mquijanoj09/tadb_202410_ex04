@@ -20,8 +20,8 @@ namespace IAEA_CS_NoSQL_REST_API.Controllers
             return Ok(losTipos);
         }
 
-        [HttpGet("{tipo_id:int}")]
-        public async Task<IActionResult> GetByIdAsync(int tipo_id)
+        [HttpGet("{tipo_id:length(24)}")]
+        public async Task<IActionResult> GetByIdAsync(string tipo_id)
         {
             try
             {

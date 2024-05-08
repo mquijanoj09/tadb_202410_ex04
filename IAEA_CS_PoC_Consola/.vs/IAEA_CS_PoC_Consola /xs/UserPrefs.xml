@@ -1,19 +1,17 @@
 ﻿<Properties StartupConfiguration="{2C61D168-C88C-4014-8062-732668CB62BA}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="IAEA_CS_PoC_Consola/AccesoDatosMongo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="IAEA_CS_PoC_Consola/Reactor.cs">
     <Files>
-      <File FileName="IAEA_CS_PoC_Consola/Program.cs" Line="8" Column="1" />
-      <File FileName="IAEA_CS_PoC_Consola/Reactor.cs" Line="48" Column="25" />
-      <File FileName="IAEA_CS_PoC_Consola/appsetings.json" Line="6" Column="2" />
-      <File FileName="IAEA_CS_PoC_Consola/PoC_Mongo.cs" Line="22" Column="41" />
+      <File FileName="IAEA_CS_PoC_Consola/Program.cs" />
+      <File FileName="IAEA_CS_PoC_Consola/Reactor.cs" Line="10" Column="9" />
+      <File FileName="IAEA_CS_PoC_Consola/appsetings.json" />
+      <File FileName="IAEA_CS_PoC_Consola/PoC_Mongo.cs" />
       <File FileName="IAEA_CS_PoC_Consola/AccesoDatosMongo.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="IAEA_CS_PoC_Consola " expanded="True">
-            <Node name="IAEA_CS_PoC_Consola">
-              <Node name="AccesoDatosMongo.cs" selected="True" />
-            </Node>
+          <Node name="IAEA_CS_PoC_Consola ">
+            <Node name="IAEA_CS_PoC_Consola" expanded="True" />
           </Node>
         </State>
       </Pad>
