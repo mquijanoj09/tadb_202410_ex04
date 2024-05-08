@@ -21,7 +21,7 @@ builder.Services.AddScoped<ReactorService>();
 builder.Services.AddScoped<TipoService>();
 builder.Services.AddScoped<UbicacionService>();
 
-// Add services to the container.
+// Add services to the container
 
 builder.Services.AddEndpointsApiExplorer();
 

@@ -11,7 +11,7 @@ namespace IAEA_CS_NoSQL_REST_API.Models
         [JsonPropertyName("id")]
         public string? Id { get; set; } = string.Empty;
 
-        [BsonId]
+        [BsonElement("tipo_nombre")]
         [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("tipo_nombre")]
         public string? Tipo_nombre { get; set; } = string.Empty;

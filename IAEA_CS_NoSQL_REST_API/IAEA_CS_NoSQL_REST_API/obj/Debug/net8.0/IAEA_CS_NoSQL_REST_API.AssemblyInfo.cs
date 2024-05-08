@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IAEA_CS_NoSQL_REST_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+35fd6166848c8bb64c62e21e2194e1405e1e2f7c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7274937b024c9cdb50a98f845fc1fb0ab6b61d37")]
 [assembly: System.Reflection.AssemblyProductAttribute("IAEA_CS_NoSQL_REST_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IAEA_CS_NoSQL_REST_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

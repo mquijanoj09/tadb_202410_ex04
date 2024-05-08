@@ -11,12 +11,12 @@ namespace IAEA_CS_NoSQL_REST_API.Models
         [JsonPropertyName("id")]
         public string? Id { get; set; } = string.Empty;
 
-        [BsonId]
+        [BsonElement("ciudad")]
         [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("ciudad")]
         public string? Ciudad { get; set; } = string.Empty;
 
-        [BsonId]
+        [BsonElement("pais")]
         [BsonRepresentation(BsonType.String)]
         [JsonPropertyName("pais")]
         public string? Pais { get; set; } = string.Empty;
